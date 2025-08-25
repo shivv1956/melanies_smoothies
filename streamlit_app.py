@@ -15,8 +15,6 @@ st.write(
 
 title = st.text_input("Name on Smoothie :")
 
-
-session = get_active_session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col("FRUIT_NAME"))
 # st.dataframe(my_dataframe)
 
