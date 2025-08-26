@@ -1,6 +1,8 @@
 # Import python packages
 import streamlit as st
 from snowflake.snowpark.functions import col
+import requests
+
 
 cnx = st.connection("snowflake")
 session = cnx.session()
@@ -40,3 +42,5 @@ if title and submit_button:
     st.success(f'Your Smoothie is ordered! , {title}', icon="✅")
 
 
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)
